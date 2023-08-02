@@ -8,3 +8,5 @@ echo Line2
 echo -e "Prathith\nKumar"
 
 #Whenever we use special characters, always enclose them in double quotes --->  ""
+
+echo -e "cloud\tDevOps\tare\tBooming\tneed\toppurtunity\tasap"
