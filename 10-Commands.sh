@@ -29,9 +29,18 @@
 
 # sample
 
+hello(){
+    echo "This is a test to call from one function to other function"
+    echo "This is a practice"
+    echo "Last line bla bla"
+}
+
 stat(){
     echo "Number of sessions opened are $(who | wc -l)"
     echo "Todays date is $(date +%F)"
+
+     # calling another function
+     hello
 }
 
 stat
