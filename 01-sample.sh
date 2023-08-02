@@ -8,3 +8,7 @@
 echo Welcome to Bash Scripting!
 
 # How to execute these commands --> $ bash scriptName.sh or $ sh scriptName.sh or ./scriptName.sh
+
+echo Line1
+
+echo Line2
