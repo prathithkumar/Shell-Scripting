@@ -17,14 +17,21 @@
 # below is how we call a function
 # f
 
-sample(){
-    echo This is a test for command function
-    echo if you see this the function command was successfully executing
-    echo Bye 
+# sample(){
+#     echo This is a test for command function
+#     echo if you see this the function command was successfully executing
+#     echo Bye 
+# }
+
+# sample
+
+# echo test call
+
+# sample
+
+stat(){
+    echo "Number of sessions opened are $(who | wc -l)"
+    echo "Todays date is $(date +%f)"
 }
 
-sample
-
-echo test call
-
-sample
+stat
