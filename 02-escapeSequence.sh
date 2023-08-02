@@ -10,3 +10,4 @@ echo -e "Prathith\nKumar"
 #Whenever we use special characters, always enclose them in double quotes --->  ""
 
 echo -e "cloud\tDevOps\tare\tBooming\tneed\toppurtunity\tasap"
+echo -e "cloud\tDevOps\tare\tBooming\nneed\toppurtunity\tasap"
