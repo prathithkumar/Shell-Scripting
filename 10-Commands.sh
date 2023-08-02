@@ -31,7 +31,7 @@
 
 stat(){
     echo "Number of sessions opened are $(who | wc -l)"
-    echo "Todays date is $(date +%f)"
+    echo "Todays date is $(date +%F)"
 }
 
 stat
