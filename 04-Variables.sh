@@ -12,9 +12,7 @@ d=makjsd    # d is a string
 
 # There is no concept of Data types in Linux or Shell Scrpiting
 # By default everything is a string
-
 # if the input or varaibles are having some special characters, enclose them always in double quotes
-
 # how to print the value of varaibles? Below are the answeers
 #Using special characters, we are going to print the value of the variables
 
@@ -22,3 +20,11 @@ d=makjsd    # d is a string
 
 echo a
 echo $a
+
+echo ${a}
+
+# Both $a and ${a} works, Both are same. Prefer to use in flower Brackets
+
+# DATA_DIR=robot
+
+# rm -rf /data/${DATA_DIR}/ 
