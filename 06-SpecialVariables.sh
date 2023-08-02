@@ -15,5 +15,5 @@ echo $$     # $$ is going to print the PID of the current process
 echo $#     # $# is going to print the number of arguments
 echo $?     # $? is going to print the exit code of the last command.
 
-echo "Variables Used In the script $*"  # $* is going to print the used variables
-echo "Variables Used are $@"            # $@ is going to print the used variables  
+#echo "Variables Used In the script $*"  # $* is going to print the used variables
+#echo "Variables Used are $@"            # $@ is going to print the used variables  
