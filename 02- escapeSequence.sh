@@ -1,14 +1,9 @@
-#!/bin/bash
-# Shebang Notation
-
-#! --> This represnts Shebang Notation
-#Shebang Notation tells the script with interpretor this script has to be executed.
-# There can be only one interpretor per script and that should always be the first line of the script
-
-echo Welcome to Bash Scripting!
-
-# How to execute these commands --> $ bash scriptName.sh or $ sh scriptName.sh or ./scriptName.sh
-
+# \n ---> this indicates a new lines
+# Prathith\nKumar ---> This will print in two lines as we inserted \n in middle.
+# we need to use "-e" for the above line as it was a special character.
 echo Line1
 
 echo Line2
+echo -e "Prathith\nKumar"
+
+#Whenever we use special characters, always enclose them in double quotes --->  ""
