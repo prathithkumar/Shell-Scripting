@@ -9,7 +9,7 @@ a=10        # here a is integer
 b=20        # b is also interger
 c=30        # c is integer    
 d=makjsd    # d is a string
-DATE="02AUG2023"
+DATE="02AUG2023"  #  HardCoding
 
 
 # There is no concept of Data types in Linux or Shell Scrpiting
