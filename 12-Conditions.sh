@@ -25,6 +25,6 @@ case $ACTION in
         ;;
     *)
         echo -e "\e[35m Valid options are start or stop or restart \e[0m"
-        echo -e "\e[33m Example Usage\e [0m :\n \t Bash scriptName Stop"
+        echo -e "\e[36m Example Usage \e[0m :\n \t Bash scriptName Stop"
         ;;
 esac
