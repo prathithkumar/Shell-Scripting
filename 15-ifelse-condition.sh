@@ -8,11 +8,11 @@ if [ "$ACTION" == "start" ]; then
      echo  "Starting Payment"
      exit 0
 
-elif ["$ACTION" == "stop"]; then
+elif [ "$ACTION" == "stop" ]; then
      echo "stopping payment"
      exit 1
 
-elif ["$ACTION" == "stop"]; then
+elif [ "$ACTION" == "restart" ]; then
      echo "Restarting payment"
      exit 2
 
