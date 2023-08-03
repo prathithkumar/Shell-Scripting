@@ -12,3 +12,5 @@ echo $a
 
 COMMENT
 echo $b
+
+#This is an example of Multi-line Comment, whatever we have enclosed between <<COMMENT   COMMENT will be marked as comment
