@@ -22,7 +22,7 @@ case $ACTION in
          echo -e "\e[31m Stopping Payment Service \e[0m"
          exit 1
          ;;
-     restart)
+    restart)
         echo -e "\e[36m Restarting Payment Service \e[0m"
         exit 2       
         ;;
