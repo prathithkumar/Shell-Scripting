@@ -4,3 +4,7 @@
 # 0 to 255 is the range of the codes
 # Among all 0 represnents action represnets completed successfully
 # Anything in between 1 to 255 represents either partial success , partial failure , complete failure
+
+# 0   : GlobalSuccess
+# 1-125 : Some failures from the command
+# 125+ : System failure
