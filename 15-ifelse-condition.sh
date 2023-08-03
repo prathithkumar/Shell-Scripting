@@ -8,7 +8,17 @@ if [ "$ACTION" == "start" ]; then
      echo  "Starting Payment"
      exit 0
 
-else
-     echo "Valid Option is Start Only"
+else if ["$ACTION" == "stop"]; then
+     echo "stopping payment"
+     exit 1
 
+else if ["$ACTION" == "stop"]; then
+     echo "Restarting payment"
+     exit 2
+
+else
+    echo -e "\e[35m Valid options are start or stop or restart \e[0m"
+    echo -e "\e[36m Example Usage \e[0m :\n \t Bash scriptName Stop"
+    exit 3
+    
 fi 
