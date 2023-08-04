@@ -10,7 +10,7 @@ if [ $USER_ID -ne 0 ] ; then
 fi 
 
 echo "Configuring frontend"
-yum install nginx -y &>> /tmp /frontend.log
+yum install nginx -y    &>> /tmp/frontend.log
 
 # yum install nginx -y
 # systemctl enable nginx
