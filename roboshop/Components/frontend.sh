@@ -5,7 +5,7 @@
 USER_ID=$(id -u)
 
 if [ $USER_ID -ne 0 ] ; then
-    echo -e "\e[32m Script is expected to executed by the root user or with a sudo privilage \e[0m \n \t Example: sudo bash wrapper.sh frontend"
+    echo -e "\e[32m Script is expected to executed by the root user or with a sudo privilage \e[0m \n \t Example: \n\t\t sudo bash wrapper.sh frontend"
     exit 1
 fi 
 
@@ -17,7 +17,9 @@ yum install nginx -y    &>> /tmp/frontend.log
 if [ $? -eq 0 ]; then 
       echo -e "\e[32m success \e[0m"
 else
-     echo  -e "\e[31m failire \e[0m"
+     echo  -e "\e[31m failure \e[0m"
+
+fi     
 
 # yum install nginx -y
 # systemctl enable nginx
