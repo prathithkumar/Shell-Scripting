@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 # Validate the user who is running the script is a root user or not.
 
 USER_ID=$(id -u)
@@ -14,7 +15,7 @@ stat() {
       echo -e "\e[32m success \e[0m"
     else
       echo  -e "\e[31m failure \e[0m"
-
+      exit 2
     fi 
 }
 
