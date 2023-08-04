@@ -11,7 +11,7 @@ fi
 
 echo "Configuring frontend"
 
-echo "Installing Frontend"
+echo -n "Installing Frontend"
 yum install nginx -y    &>> /tmp/frontend.log
 
 if [ $? -eq 0 ]; then 
