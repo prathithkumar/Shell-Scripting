@@ -1,3 +1,3 @@
 #!/bin/bash
 
-bash Components/frontend.sh
+bash Components/$1.sh
