@@ -45,14 +45,17 @@ echo -n "Extracting Frontend :"
 unzip  /tmp/frontend.zip  &>> /tmp/frontend.log
 stat $?
 
+echo -n "Sorting front end files :"
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+stat $?
 
-# cd /usr/share/nginx/html
-# rm -rf *
-# unzip /tmp/frontend.zip
-# mv frontend-main/* .
-# mv static/* .
-# rm -rf frontend-main README.md
-# mv localhost.conf /etc/nginx/default.d/roboshop.conf
+
+echo -n "Restarting Frontend"
+systemctl daemon-reload    &>> /tmp/frontend.log
+systemctl restart nginx    &>> /tmp/frontend.log
 
 # I want to ensure, that SCRIPT SHOULD Fail the user who run the script is not a root user.
 # rather executing the commands and failing.
