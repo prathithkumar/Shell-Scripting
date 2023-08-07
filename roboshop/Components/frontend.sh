@@ -1,6 +1,5 @@
 #!/bin/bash
 
-set -e
 # Validate the user who is running the script is a root user or not.
 
 USER_ID=$(id -u)
@@ -52,7 +51,7 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
 
-echo -n "Restarting ${COMPONENT}"
+echo -n "Restarting ${COMPONENT}:"
 systemctl daemon-reload    &>> ${LOGFILE}
 systemctl restart nginx    &>> ${LOGFILE}
 stat $?
