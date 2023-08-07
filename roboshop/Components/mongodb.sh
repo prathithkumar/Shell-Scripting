@@ -51,8 +51,8 @@ stat $?
 
 echo -n "Injecting ${COMPONENT} schema:"
 cd ${COMPONENT}-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js   &>> ${LOGFILE}
+mongo < users.js       &>> ${LOGFILE}
 stat $?
 
 echo {${COMPONENT} Installation is Completed}
