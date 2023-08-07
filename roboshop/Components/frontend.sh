@@ -26,12 +26,10 @@ echo -n "Installing Nginx"
 yum install nginx -y   &>> ${LOGFILE}
 stat $?
 
-
 echo -n "Starting Nginx"
-systemctl enable nginx     &>> ${LOGFILE}
-systemctl start nginx      &>> ${LOGFILE}
+systemctl enable nginx     &>>  ${LOGFILE}
+systemctl start nginx      &>>  ${LOGFILE}
 stat $?
-
 
 echo -n "Downloading the ${COMPONENT} component:"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
@@ -43,8 +41,8 @@ rm -rf *   &>> ${LOGFILE}
 stat $?
 
 echo -n "Extracting ${COMPONENT} :" 
-unzip  /tmp/frontend.zip  &>> ${LOGFILE}
-mv ${COMPONENT}-main/*
+unzip  /tmp/frontend.zip   &>> ${LOGFILE}
+mv ${COMPONENT}-main/* .
 mv static/* .
 rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
