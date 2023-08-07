@@ -23,7 +23,7 @@ stat() {
 
 echo "Configuring ${COMPONENT}"
 
-echo "Configuring ${COMPONENT} repo"
+echo -n "Configuring ${COMPONENT} repo"
 curl --silent --location https://rpm.nodesource.com/setup_16.x |  bash - &>> ${LOGFILE}
 stat $?
 
