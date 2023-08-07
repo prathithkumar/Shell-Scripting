@@ -38,6 +38,24 @@ echo -n "Starting the ${COMPONENT} : "
 systemctl enable mongod    &>> ${LOGFILE}
 systemctl start mongod     &>> ${LOGFILE}         
 stat $?
+
+echo -n "Downloading the ${COMPONENT} schema: "
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+stat $?
+
+echo -n "Extracting the ${COMPONENT} Schema: "
+cd /tmp
+unzip ${COMPONENT}.zip &>> ${LOGFILE}
+stat $?
+
+
+echo -n "Injecting ${COMPONENT} schema:"
+cd ${COMPONENT}-main
+mongo < catalogue.js
+mongo < users.js
+stat $?
+
+echo {${COMPONENT} Installation is Completed}
 # yum install -y mongodb-org
 # systemctl enable mongod
 # systemctl start mongod
