@@ -3,7 +3,7 @@
 # Validate the user who is running the script is a root user or not.
 
 USER_ID=$(id -u)
-COMPONENT=catalouge 
+COMPONENT=catalouge
 LOGFILE="/tmp/${COMPONENT}.log"
 APPUSER="roboshop"
 
