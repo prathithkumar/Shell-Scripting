@@ -32,7 +32,7 @@ yum install nodejs -y  &>> ${LOGFILE}
 stat $?
 
 id ${APPUSER}          &>> ${LOGFILE}
-if [$? -ne 0] ; then
+if [ $? -ne 0 ] ; then
     echo -n "Creating Application User Account :"
     useradd roboshop
     stat $?
