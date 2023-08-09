@@ -40,6 +40,9 @@ fi
 
 DOWNLOAD
 
+echo -n "Extracting the schema: "
+unzip -o /tmp/${COMPONENT}.zip
+
 echo -n "Injecting the schema"
 cd /tmp/${COMPONENT}-main
 mysql -u root -pRoboShop@1 <shipping.sql  &>>  ${LOGFILE}
