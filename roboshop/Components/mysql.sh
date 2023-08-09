@@ -38,16 +38,21 @@ if  [ $? -eq 0 ]; then
     stat $?
 fi
 
-DOWNLOAD
 
-echo -n "Extracting the schema: "
-unzip -o /tmp/${COMPONENT}.zip
+echo -n "Downloading the ${COMPONENT} schema:"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
+stat $?
+
+
+echo -n "Extracting the ${COMPONENT} schema: "
+cd /tmp
+unzip -o /tmp/${COMPONENT}.zip    &>>  ${LOGFILE}
 stat $?
 
 echo -n "Injecting the schema"
 cd ${COMPONENT}-main
 ls -ltr ${COMPONENT}-main
-mysql -u root -pRoboShop@1 </tmp/mysql-main/shipping.sql  &>>  ${LOGFILE}
+mysql -u root -pRoboShop@1 <shipping.sql  &>>  ${LOGFILE}
 stat $?
 
 echo {${COMPONENT} Installation is Completed}
