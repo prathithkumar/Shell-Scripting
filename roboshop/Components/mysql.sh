@@ -51,7 +51,6 @@ stat $?
 
 echo -n "Injecting the schema"
 cd ${COMPONENT}-main
-ls -ltr ${COMPONENT}-main
 mysql -u root -pRoboShop@1 <shipping.sql  &>>  ${LOGFILE}
 stat $?
 
