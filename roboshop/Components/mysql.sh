@@ -42,6 +42,7 @@ DOWNLOAD
 
 echo -n "Extracting the schema: "
 unzip -o /tmp/${COMPONENT}.zip
+stat $?
 
 echo -n "Injecting the schema"
 cd /tmp/${COMPONENT}-main
