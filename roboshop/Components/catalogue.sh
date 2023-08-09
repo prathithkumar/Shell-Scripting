@@ -8,25 +8,4 @@ source Components/common.sh
 NODEJS    # calling nodejs function.
 
 
-
-
-source com
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
 echo -e "\e[35m ${COMPONENT} Installation is completed \e[0m \n"

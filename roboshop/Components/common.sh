@@ -49,7 +49,7 @@ DOWNLOAD_AND_EXTRACT() {
 }
 
 CONFIG_SVC(){
-    
+
     echo -n "Configuring the ${COMPONENT} system file :"
     sed -ie 's/MONGO_DNSNAME/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
     mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
@@ -60,16 +60,9 @@ CONFIG_SVC(){
     systemctl enable ${COMPONENT} &>> ${LOGFILE}
     systemctl restart ${COMPONENT} &>> ${LOGFILE}
     stat $?
-
-
 }
-
-
-
-
-
 # Declaring a NodeJS function
-NodeJS() {
+NODEJS() {
 
         echo "Configuring ${COMPONENT}"
 
