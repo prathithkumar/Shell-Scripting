@@ -37,6 +37,8 @@ DOWNLOAD(){
 }
 EXTRACT() {
 
+        DOWNLOAD
+
         echo -n "Downloading the ${COMPONENT} : "
         curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
         stat $?
@@ -81,7 +83,7 @@ NODEJS() {
  
        CREATE_USER            # Calls CREATE_USER functiom that creates User account:
 
-       DOWNLOAD   # Downloading and extracts the components
+       EXTRACT  # Downloading and extracts the components
 
        echo -n "Generating the ${COMPONENT} artifacts : "
        cd /home/${APPUSER}/${COMPONENT}/
