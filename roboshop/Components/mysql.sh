@@ -38,4 +38,12 @@ if  [ $? -eq 0 ]; then
     stat $?
 fi
 
+DOWNLOAD
+
+echo -n "Injecting the schema"
+cd ${COMPONENT}-main
+mysql -u root -pRoboShop@1 <shipping.sql  &>>  ${LOGFILE}
+stat $?
+
+echo {${COMPONENT} Installation is Completed}
 
