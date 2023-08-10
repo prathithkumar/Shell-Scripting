@@ -57,5 +57,6 @@ systemctl daemon-reload    &>> ${LOGFILE}
 systemctl restart nginx    &>> ${LOGFILE}
 stat $?
 
+echo "${COMPONENT} installation is completed"
 # I want to ensure, that SCRIPT SHOULD Fail the user who run the script is not a root user.
 # rather executing the commands and failing.
