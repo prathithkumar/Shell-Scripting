@@ -59,7 +59,7 @@ CONFIG_SVC(){
 
     echo -n "Configuring the ${COMPONENT} system file :"
     
-    sed -i -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e   's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
+    sed -i -e 's/CARTENDPOINT/cart.roboshop.internal/' -e 's/DBHOST/mysql.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e 's/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' -e 's/REDIS_ENDPOINT/redis.roboshop.internal/' -e   's/MONGO_DNSNAME/mongodb.roboshop.internal/' -e 's/MONGO_ENDPOINT/mongodb.roboshop.internal/' /home/${APPUSER}/${COMPONENT}/systemd.service
     mv /home/${APPUSER}/${COMPONENT}/systemd.service /etc/systemd/system/${COMPONENT}.service
     stat $?
 
@@ -96,3 +96,30 @@ NODEJS() {
 
 
 } 
+
+MVN_PACKAGE() {
+          echo -n "Generating the ${COMPONENT} artifacts :"
+          cd /home/${APPUSER}/${COMPONENT}/
+          mvn clean package  &>> ${LOGFILE}
+          mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
+          stat $?
+}
+
+JAVA() {
+        echo "Configuring ${COMPONENT}"
+
+
+        echo -n "Installing manven:"
+        yum install maven -y   &>> ${LOGFILE}
+        stat $?
+
+        CREATE_USER            # Calls CREATE_USER functiom that creates User account:
+
+        DOWNLOAD_AND_EXTRACT  # Downloading and extracts the components
+
+        MVN_PACKAGE
+
+        CONFIG_SVC
+
+      
+}
