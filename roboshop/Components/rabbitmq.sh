@@ -24,7 +24,7 @@ systemctl start rabbitmq-server  &>> ${LOGFILE}
 stat $?
 
 sudo rabbitmqctl list_users | grep roboshop &>> ${LOGFILE}
-if [$? -ne 0] ; then 
+if [ $? -ne 0 ] ; then 
     echo -n "Creating ${COMPONENT} user account :"
     rabbitmqctl add_user roboshop roboshop123 &>> ${LOGFILE}
     stat $?
