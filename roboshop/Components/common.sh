@@ -89,4 +89,9 @@ NODEJS() {
        cd /home/${APPUSER}/${COMPONENT}/
        npm install       &>> ${LOGFILE}
        stat $? 
+
+       CONFIG_SVC
+       
+
+
 } 
