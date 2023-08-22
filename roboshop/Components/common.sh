@@ -129,13 +129,15 @@ PYTHON() {
         echo "Configuring ${COMPONENT}"
 
         echo -n "Installing python"
-        yum install python36 gcc python3-devel -y
+        yum install python36 gcc python3-devel -y &>> ${LOGFILE}
         stat $?
 
         CREATE_USER            # Calls CREATE_USER functiom that creates User account:
 
         DOWNLOAD_AND_EXTRACT  # Downloading and extracts the components
 
+        echo -n "Generating the artifacts"
+        cd /home/${APPUSER}/${COMPONENT}/
         pip3 install -r requirements.txt  &>> ${LOGFILE}
         stat $?
 
