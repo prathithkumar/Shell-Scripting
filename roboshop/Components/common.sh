@@ -123,3 +123,20 @@ JAVA() {
 
       
 }
+
+
+PYTHON() {
+        echo "Configuring ${COMPONENT}"
+
+        echo -n "Installing python"
+        yum install python36 gcc python3-devel -y
+        stat $?
+
+        CREATE_USER            # Calls CREATE_USER functiom that creates User account:
+
+        DOWNLOAD_AND_EXTRACT  # Downloading and extracts the components
+
+        pip3 install -r requirements.txt  &>> ${LOGFILE}
+        stat $?
+
+}
