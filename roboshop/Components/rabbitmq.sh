@@ -33,7 +33,6 @@ if [ $? -ne 0 ] ; then
 fi
 
 echo -n "Configuring the permissions : "
-rabbitmqctl add_user roboshop roboshop123   
 rabbitmqctl set_user_tags roboshop administrator  &>> ${LOGFILE}
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*" &>> ${LOGFILE}
 stat $?
