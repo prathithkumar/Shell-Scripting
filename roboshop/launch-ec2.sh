@@ -12,6 +12,9 @@ AMI_ID="ami-0c1d144c8fdd8d690"
 INSTANCE_TYPE="t3.micro"
 SG_ID="sg-0e1221dcbe704dc32"
 
-aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" 
+PRIVATEIP=$(aws ec2 run-instances --image-id ${AMI_ID} --instance-type ${INSTANCE_TYPE}  --security-group-ids ${SG_ID} --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=${COMPONENT}}]" | jq '.Instances[].PrivateIpAddress')
+
+echo "Private IP Address of the $COMPONENT is $PRIVATEIP"
+
 
 
